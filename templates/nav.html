@@ -1,0 +1,127 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head><meta http-equiv="content-type" content="text/html;charset=utf-8">
+
+    <title>Gold Bazel offers Premium Tea Blends and Classic Infusions | Gold Bazel</title>
+		<meta name="description" content="Known for offering a vibrant and aromatic range of premium tea blends, Gold Bazel, today has become a household name. From black tea to green tea, fine artful tea to herbal and fruit tea Gold Bazel offers a diverse variety of tea blends that are flavourful and satiating.">
+	    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+
+    <link rel="stylesheet" href="{% static 'css/css-reset.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/css-layerslideraafb.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/css-style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/css-jquery.mCustomScrollbar.min.css' %}" type="text/css">
+
+
+    <link rel="stylesheet" href="https://rawgit.com/kenwheeler/slick/master/slick/slick.css">
+    <link rel="stylesheet" href="https://rawgit.com/kenwheeler/slick/master/slick/slick-theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117672981-1"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- Angular js -->
+    <script type="text/javascript" src="{% static 'js/js-angular.min.js'%}"></script>
+    <script type="text/javascript" src="{% static 'js/js-angular-route.min.js'%}"></script>
+    <script src="{% static 'js/1.6.4-angular-sanitize.js'%}"></script>
+    <script type="text/javascript" src="{% static 'js/js-dirPagination.js'%}"></script>
+  
+
+  </head><body class="site parallax-slider" ng-app="AngularModel" ng-controller="AngularController">
+    
+    <input type="hidden" id="site_url" value="/">
+    <!-- Fixed navbar -->
+    <div class="circle"></div>
+    <div class="menu mm"> </div>
+    <nav id="topbar" class="navbar" role="navigation" style="background-color: black;">
+      <div style="max-width:1300px;margin:0 auto">
+      <div class="navbar--center"> 
+        <div class="burger">
+          <div class="x"></div>
+          <div class="y"></div>
+          <div class="z"></div>
+        </div>
+        
+        <div style="float:left;width:100px;padding-left: 28px" class="logo"><a href="/"><img style="height: 70px;width: auto;" src="{% static 'img/logo.jpg' %}" alt="Gold Bazel"></a></div>
+        <div style="display:inline-block;line-height:80px;width:calc(100% - 200px)"><ul class="nav navbar-nav">
+          <li class="item-117"><a href="/about">ABOUT</a></li>
+          <li class="item-145"><a href="/our-tea">OUR TEAS</a></li>
+          <li><a href="/recipe">TEA RECIPES</a></li>
+          <li class="item-169"><a href="/indian-life">INDIAN LIFE</a></li>
+          <li class="item-170"><a href="/whats-new">WHAT'S NEW</a></li>
+          <li class="item-170"><a href="/contact">CONTACT US</a></li>
+          <li class="item-170"><a href="" target="_blank">SHOP NOW</a></li>
+        </ul></div>
+      </div>
+    </div>
+    </nav>
+    {% block content %}
+    
+    {% endblock %}
+<footer>
+  <div class="wrap">
+    <div class="head">
+      <h6> <span class="left"></span> Connect with us <span class="right"></span> </h6>
+    </div>
+     <div class="social">
+              <ul>
+                 <li><a href="" target="_blank" class="fb">Facebook</a></li>
+                 <li><a href="" target="_blank" class="twitter">Twitter</a></li>
+                 <li><a href="" target="_blank" class="insta">Instagram</a></li>
+                 <li><a href="" target="_blank" class="pin">Pinit</a></li> 
+              </ul>
+  </div>
+    <div class="newsletter">
+		<label>SIGN-UP FOR TEAMAILS</label>
+		<div class="{{ result }} alert">{{ result_subscription_message }}</div>
+		<input type="text" value="Your Email Address" id="subscriptionemail" class="inputxt nt">
+		<button type="button" class="btn-arrow" ng-click="submitSubscription()"><i class="ion-arrow-right-c"></i></button>
+    </div>
+
+    <div class="footer-add">
+      <p> -</p>
+    </div>  
+    
+    <div class="copyright"> © 2023 Gold Bazel Private Company Limited. </div>
+  </div>
+</footer>
+
+<script src="{% static 'js/slick-slick.js'%}"></script>
+
+<script src="{% static 'js/js-jquery-3.3.1.min.js'%}" type="text/javascript"></script> 
+<script src="{% static 'js/js-greensockb3a6.js'%}" type="text/javascript"></script> 
+<script src="{% static 'js/js-TweenMax.min.js'%}" type="text/javascript"></script> 
+<script src="{% static 'js/js-layerslider.kreaturamediaaafb.js'%}" type="text/javascript"></script> 
+<script src="{% static 'js/js-layerslider.transitionsaafb.js'%}" type="text/javascript"></script> 
+<script src="{% static 'js/js-parallax.min.js'%}" type="text/javascript"></script> 
+<script data-cfasync="false" src="{% static 'js/js-custom.js'%}" type="text/javascript"></script>
+<script src="{% static 'js/pages-app.js'%}" type="text/javascript"></script>
+  <script src="{% static 'js/js-ScrollMagic.js'%}"></script>
+  <script type="text/javascript" src="{% static 'js/js-animation.gsap.js'%}"></script> 
+  <script type="text/javascript" src="{% static 'js/js-debug.addIndicators.min.js'%}"></script> 
+  <script data-cfasync="false" src="{% static 'js/js-homepage.js'%}" type="text/javascript"></script> 
+	
+
+
+<style>
+	.success.alert {
+		color: green;
+	}
+	.error.alert {
+		color: red;
+	}
+	.error.alert {
+		color: red;
+	}
+	.errormsg{
+		color: red;
+		float:left;
+		text-align: left;
+	}
+ </style>
+
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+{% extends 'nav.html' %}
+{% load static %}
+
+    {% block content %}
+    <div style="overflow-y:hidden;">
+  <div id="content" class="container theme-showcase" role="main">
+      
+    <div id="layerslider_13" class="ls-wp-container fitvidsignore" style="width: 1200px;height:500rem;margin:0 auto;margin-bottom: 0px;">
+      {% for value in banners %}  <div class="ls-slide " data-ls="bgsize:100% 100%; bgposition:0 0 ; duration:4000; transition2d:5;kenburnsscale:1.2; parallaxtype:3d; parallaxdurationmove:450; parallaxdurationleave:450; parallaxdistance:40; parallaxrotate:20;"> 
+            <img src="{{value.image}}" style="width: 100%;" class="ls-bg" alt="Slide background">
+            <div class="ls-wrapper ls-parallax" style="top:35%">
+              <a href="{{value.url}}" style="top:93%;left:50%; width:150px;  color: #fff;
+              background: #562f08; text-transform: uppercase; border-radius: 25px;
+              text-align: center;
+              padding: 8px 15px;
+              display: inline-block;" class="ls-l">Explore</a> 
+             </div>
+          </div> 
+        {% endfor %}
+
+    </div>
+
+    
+
+    <div class="product-container">
+      <div class="wrap">
+        <div class="heading"> <span></span>  Find your perfect blend <span></span> </div>
+        <div class="subheading"> Invigorate the senses with world-class flavors of exquisite tea</div>
+        
+        {% for value in teas %}
+        <div class="reusable">
+          <div class="thumbs"><img src="{{value.image}}"></div>
+          <div class="desc">
+            <div class="head" style="height:auto;min-height:36px">{{value.title}} </div>
+            <div class="details">{{value.description}}</div>
+          </div>
+          <div class="black leaf"><img src="{% static 'img/black-bg.png' %}" data-set="{% static 'img/black-bg-hover.png' %}"></div>
+        </div>
+        {% endfor %}
+
+
+      </div>
+      <a class="enjoy-css" href="/our-tea">VIEW THE FULL RANGE</a> </div>
+  </div>
+
+  <!-- /container -->
+  <div class="parallax-window" data-parallax="scroll" id="random">
+    <div class="arrow"><img src="{% static 'img/images-arrow-prallax.png' %}"></div>
+    <div class="bottom-parallex">
+      <div class="wrapr">
+		  <h4>Delectable Tea Pairings You Should Try</h4>
+        <h3>Delectable Tea Pairings You Should Try</h3>
+        <h3 class="subheading">Black Tea Pairing</h3>
+        <p>Oozing with robust flavor, loaded with tannins, black tea goes best with full-flavored foods. <br>The stout structure of black tea marries artfully with strong flavors in a hearty meal and <br>enhances your dining experience as a whole.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tea-animation-wrap">
+  <div class="inner">
+    <div class="bg1"></div>
+    <div class="bg"></div>
+    <div class="bg2"></div>
+    <div class="hand"> <img src="{% static 'img/images-hand.png' %}"> </div>
+    <div class="side-teabag"> <img src="{% static 'img/images-side-tea-bag.png' %}"> </div>
+    <div class="tea-txt"> <img src="{% static 'img/images-tea.png' %}"> </div>
+    <div class="txt-101"> <img src="{% static 'img/images-101.png' %}"> </div>
+    <div class="tea-container"> <img src="{% static 'img/images-empty-tea.png' %}" class="tea"> <img src="{% static 'img/images-filled-tea.png'%}" class="tea filled"> </div>
+  </div>
+</div>
+
+<div class="tea-spining-area">
+  <div class="container"> <img src="{% static 'img/images-tea-time-page.jpg'%}"> </div>
+</div>
+
+
+<div class="product-container article">
+  <div class="wrap">
+    <div class="heading"> <span></span> Indian Life <span></span> </div>
+    {% for value in blogs %}
+
+        <div class="reusable">
+      <div class="thumbs"> <img src="{{value.image}}"> </div>
+      <div class="desc">
+        <div class="head">{{value.title}}</div>
+        <div class="details">{{value.description}}</div>
+        <a href="the-royal-wedding-of-meghan-markle-and-prince-harry.html" class="btn-explore">Read More</a> </div>
+    </div>
+   {% endfor %}
+   
+      </div>
+</div>
+
+{% endblock %}
