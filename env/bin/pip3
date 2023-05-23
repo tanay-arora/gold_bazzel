@@ -1,4 +1,4 @@
-#!/Users/johnmccarthyjr/projects/gold_blazzel/env/bin/python3
+#!/Users/johnmccarthyjr/projects/gold_blazzel/gold_bazzel/env/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

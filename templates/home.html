@@ -7,7 +7,7 @@
       
     <div id="layerslider_13" class="ls-wp-container fitvidsignore" style="width: 1200px;height:500rem;margin:0 auto;margin-bottom: 0px;">
       {% for value in banners %}  <div class="ls-slide " data-ls="bgsize:100% 100%; bgposition:0 0 ; duration:4000; transition2d:5;kenburnsscale:1.2; parallaxtype:3d; parallaxdurationmove:450; parallaxdurationleave:450; parallaxdistance:40; parallaxrotate:20;"> 
-            <img src="{{value.image}}" style="width: 100%;" class="ls-bg" alt="Slide background">
+            <img src="{{value.image.url}}" style="width: 100%;" class="ls-bg" alt="Slide background">
             <div class="ls-wrapper ls-parallax" style="top:35%">
               <a href="{{value.url}}" style="top:93%;left:50%; width:150px;  color: #fff;
               background: #562f08; text-transform: uppercase; border-radius: 25px;
@@ -29,7 +29,7 @@
         
         {% for value in teas %}
         <div class="reusable">
-          <div class="thumbs"><img src="{{value.image}}"></div>
+          <div class="thumbs"><img src="{{value.image.url}}"></div>
           <div class="desc">
             <div class="head" style="height:auto;min-height:36px">{{value.title}} </div>
             <div class="details">{{value.description}}</div>
@@ -81,11 +81,11 @@
     {% for value in blogs %}
 
         <div class="reusable">
-      <div class="thumbs"> <img src="{{value.image}}"> </div>
+      <div class="thumbs"> <img src="{{value.image.url}}"> </div>
       <div class="desc">
         <div class="head">{{value.title}}</div>
         <div class="details">{{value.description}}</div>
-        <a href="the-royal-wedding-of-meghan-markle-and-prince-harry.html" class="btn-explore">Read More</a> </div>
+        <a href="/story/{{value.pk}}" class="btn-explore">Read More</a> </div>
     </div>
    {% endfor %}
    

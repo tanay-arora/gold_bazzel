@@ -1,0 +1,39 @@
+
+{% extends 'nav.html' %}
+{% load static %}
+{% block content %}
+    
+    
+    <div class="breadcrumb">
+	<ul>
+		<li><a href="/">HOME</a></li>
+		<li>Recipes</li>
+	</ul>
+</div>
+<div class="inner-banner " data-parallax="scroll" data-image-src="{% static 'img/recipe-bg.png'%}">
+</div>
+
+<div class="inner-wrap">
+	<div class="inner-heading-color">
+	    <h3>Recipes</h3>
+	</div>
+
+	<div class="recipewrap">
+		<div class="prod-row">
+            {% for value in recipes %}
+						<div class="prod-col-3">
+		        <div class="figure">
+		          <img src="{{value.image.url}}"/>
+		        </div>
+		        <div class="caption">{{value.title}}</div>
+		        <a href="/recipe/{{value.pk}}">Know More</a>
+		    </div>
+{% endfor %}
+            			
+					    
+		</div>
+	</div>
+
+</div>
+
+{% endblock %}

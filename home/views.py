@@ -10,29 +10,55 @@ class HoomeView(View):
         data = {
             "banners":banners,
             "teas":tea,
-            "blogs":blogs
+            "blogs":blogs,
         }
         return render(request, 'home.html',data)
 
 class AboutView(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'about.html')
+        csrs = csr.objects.all()
+        data = {
+            "csrs":csrs
+        }
+        return render(request, 'about.html',data)
 
 class TeaView(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'our-tea.html')
+        products = product.objects.all()
+        tags = tag.objects.all()
+        data = {
+            "products":products,
+            "tags":tags
+        }
+        return render(request, 'our-tea.html',data)
 
 class RecipeView(View):
     def get(self, request, *args, **kwargs):
-        return render(request, '')
+        recipes = recipe.objects.all()
+        data = {
+            "recipes":recipes
+        }
+        return render(request, 'recipe.html',data)
 
 class LifeView(View):
     def get(self, request, *args, **kwargs):
-        return render(request, 'indian-life.html')
+        blogs = blog.objects.all()
+        data = {
+            "blogs":blogs,
+        }
+        return render(request, 'indianlife.html',data)
 
-class NewView(View):
+class DealerView(View):
     def get(self, request, *args, **kwargs):
-        return render(request, '')
+        purcase = point_per_purchase.objects.all()
+        prize = prize_points.objects.all()
+        dealer = dealers.objects.all()
+        data = {
+            "purchases":purcase,
+            "prizes":prize,
+            "dealers":dealer,
+        }
+        return render(request, 'dealers.html',data)
 
 class ContactView(View):
     def get(self, request, *args, **kwargs):
@@ -45,3 +71,27 @@ class BlogView(View):
 class ErrorView(View):
     def get(self, request, *args, **kwargs):
         return render(request,'error.html')
+
+class SingleProductView(View):
+    def get(self, request, pk):
+        Product = product.objects.get(pk=pk)
+        data = {
+            "product":Product
+        }
+        return render(request,'teapage.html',data)
+
+class StoryView(View):
+    def get(self, request, pk):
+        story = blog.objects.get(pk=pk)
+        data = {
+            "story":story
+        }
+        return render(request,'story.html',data)
+
+class recipeView(View):
+    def get(self, request, pk):
+        recipeV = recipe.objects.get(pk=pk)
+        data = {
+            "recipe":recipeV
+        }
+        return render(request,'tearecipe.html',data)

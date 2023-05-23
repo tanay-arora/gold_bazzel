@@ -19,12 +19,13 @@
   	<div class="tabwrap">
     	<div class="tabnav">
      		<ul>
-       			<li><a href="javascript:;.html" class="active">Gold Bazel</a></li>
-        		<li><a href="javascript:;.html">CSR</a></li>
+       			<li><a id="AClass" href="javascript:;.html" onclick="changeTab(1)" class="active">Gold Bazel</a></li>
+        		<li><a id="BClass" href="javascript:;.html" onclick="changeTab(0)">CSR</a></li>
       		</ul>
     	</div>
+        
     	<div class="tab-content">
-      		<div class="tab" style="display: block;">
+      		<div id="ABOUT" class="tab" style="display: block;">
      			<div class="content"> 
        	  			<h2>Experience More with Gold Bazel</h2>
        				We travel the world in search of the finest teas and our blends reflect the diversity of cultures, regions, tastes and experiences.<br>
@@ -45,7 +46,7 @@
           				<h4>CRAFTED WITH PASSION</h4>
           				<p>Gold Bazel has become one of the India's most loved tea companies. because we never stop learning, experimenting and inventing. 
             			Our expert blenders have been constantly perfecting their craft and have years of combined experience and unrivalled expertise. They pay attention to details that matter, from sourcing and selection to blending. That is how you get the perfect cup of tea. Every time.</p>
-          				<img src="{% static 'img/crafted-with-passion.svg'%}">
+          				<img src="{% static 'img/crafted-with-passion.svg' %}">
       				</div>
       			</div>
     		</div>
@@ -55,35 +56,27 @@
 	</div>
 
 
-    <div class="one-tab last" style="display: none;">
+    <div id="CSR" class="one-tab last" style="display: none;">
 		<div class="method column" style="margin: 0px;">
 			<div class="inner-wrap">
 				<ul>
+                    {% for value in csrs %}
 					<li>
-						<div class="img-sec">
-							<img src="https://www.twiningsindia.com/assets/clientarea/images/csr1.png" alt="" title="" />
-						</div>
-						<div class="content-part">
-              <p>At Twinings we believe that everyone has the right to a decent quality of life and to be able to provide for themselves and their families. Twinings aims to buy from the best estates, both in terms of quality and social standards, but even these can be improved further, which is what we aim to do.</p>
-						</div>
-					</li>
-					<li>
-						<div class="content-part">
+    				{% if forloop.counter|divisibleby:2 %}		 <div class="content-part">
 					
-              <p>Our Sourced with Care programme is designed to help support the changes needed to make this a reality in the places around the world where we source our goods and ingredients. We work to enhance livelihoods, enable life opportunities and improve living standards for communities in our supply chain.</p>
+              <p>{{value.description}}</p>
 						</div>
+                        {% endif %}
 						<div class="img-sec">
-							<img src="https://www.twiningsindia.com/assets/clientarea/images/csr2.jpg" alt="" title="" />
+							<img  src="{{value.image.url}}" alt="" title="" />
 						</div>
+                        {% if not forloop.counter|divisibleby:2 %}      <div class="content-part">
+					
+              <p>{{value.description}}</p>
+						</div>{% endif %}
 					</li>
-					<li>
-						<div class="img-sec">
-							<img src="https://www.twiningsindia.com/assets/clientarea/images/csr3.jpg" alt="" title="" />
-						</div>
-						<div class="content-part">
-              <p>Sourced with Care sets the ambitious goal to improve the lives of 500,000 people in communities where we source our products by 2020. You can find out about our Sourced with Care work and our progress so far here by visiting <a href="https://www.sourcedwithcare.com/en" target="_blank">https://www.sourcedwithcare.com/en</a>.</p>
-						</div>
-					</li>
+                    
+                    {% endfor %}
 				</ul>
 			</div>
 		</div>
@@ -91,6 +84,22 @@
 </div>
 </div>
 
+<script>
+   function changeTab( i){
+        if(i ==0){
+            document.getElementById('ABOUT').style="display:none";
+            document.getElementById('CSR').style="display:block";
+            document.getElementById('AClass').classList.remove('active');
+            document.getElementById('BClass').classList.add('active');
+        }else{
+            document.getElementById('CSR').style="display:none";
+            document.getElementById('ABOUT').style="display:block";
+            
+            document.getElementById('AClass').classList.add('active');
+            document.getElementById('BClass').classList.remove('active');
+        }
+    }
+</script>
 
 
 

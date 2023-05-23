@@ -1,87 +1,14 @@
-<!DOCTYPE html>
-<html lang="en-gb">
-  <head><meta http-equiv="content-type" content="text/html;charset=utf-8">
-  
-    <!-- OneTrust Cookies Consent Notice start for twiningsindia.com -->
-    <script type="text/javascript" src="js/7a4c8a68-0cf5-4365-b479-071c5fe2a305-OtAutoBlock.js"></script>
-    <script src="js/scripttemplates-otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="7a4c8a68-0cf5-4365-b479-071c5fe2a305"></script>
-    <script type="text/javascript">
-    function OptanonWrapper() { }
-    </script>
-    <!-- OneTrust Cookies Consent Notice end for twiningsindia.com -->
-    <title>Premium Tea Blends for all Occasion | Twinings</title>
-		<meta name="description" content="Twinings offers a classic range of tea blends and flavours for you to enjoy. Some of its premium offerings include Black Tea, Green Tea, Herbal and Fruit Infusions, Assam Second Flush, Darjeeling Loose Leaf tea and Darjeeling Green Whole Leaf tea.">
-	    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="css/css-reset.css" type="text/css">
-    <link rel="stylesheet" href="css/css-layerslideraafb.css" type="text/css">
-    <link rel="stylesheet" href="css/css-style.css" type="text/css">
-    <link rel="stylesheet" href="css/css-jquery.mCustomScrollbar.min.css" type="text/css">
 
-
-    <link rel="stylesheet" href="https://rawgit.com/kenwheeler/slick/master/slick/slick.css">
-    <link rel="stylesheet" href="https://rawgit.com/kenwheeler/slick/master/slick/slick-theme.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css">
-
-    <!--<script src="https://www.google.com/recaptcha/api.js" async defer></script>-->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117672981-1"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <!-- Angular js -->
-    <script type="text/javascript" src="js/js-angular.min.js"></script>
-    <script type="text/javascript" src="js/js-angular-route.min.js"></script>
-    <script src="js/1.6.4-angular-sanitize.js"></script>
-    <script type="text/javascript" src="js/js-dirPagination.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117672981-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-117672981-1', {
-     
-      'linker': {
-     
-        'domains': ['amazon.in']
-     
-      }
-     
-    });
-    </script>
-  
-
-  </head><body class="site parallax-slider" ng-app="AngularModel" ng-controller="AngularController">
-    <input type="hidden" id="site_url" value="https://www.twiningsindia.com/">
-    <!-- Fixed navbar -->
-    <div class="circle"></div>
-    <div class="menu mm"> </div>
-    <nav id="topbar" class="navbar" role="navigation">
-      <div class="navbar--center"> 
-        <div class="burger">
-          <div class="x"></div>
-          <div class="y"></div>
-          <div class="z"></div>
-        </div>
-        <div class="logo"><a href="www.twiningsindia.html"><img src="images/Parallax-Slider-logo.png" alt="twinings"></a></div>
-        <ul class="nav navbar-nav">
-          <li class="item-117"><a href="about-us.html">ABOUT</a></li>
-          <li class="item-145"><a href="our-teas.html">OUR TEAS</a></li>
-          <li><a href="recipes.html">TEA RECIPES</a></li>
-          <li class="item-169"><a href="london-life.html">LONDON LIFE</a></li>
-          <li class="item-170"><a href="whats-new.html">WHAT'S NEW</a></li>
-          <li class="item-170"><a href="contact-us.html">CONTACT US</a></li>
-          <li class="item-170"><a href="https://www.amazon.in/stores/page/85291E59-0FA4-4146-907B-26DBB9A1BD31?_ga=2.135914551.766587381.1537445273-1193347235.1525414509" target="_blank">SHOP NOW</a></li>
-        </ul>
-      </div>
-    </nav><div class="breadcrumb">
+{% extends 'nav.html' %}
+{% load static %}
+{% block content %}
+	<div class="breadcrumb">
 	<ul>
 		<li><a href="www.twiningsindia.html">HOME</a></li>
 		<li>OUR TEAS</li>
 	</ul>
 </div> 
-<div class="inner-banner" data-parallax="scroll" data-image-src="https://www.twiningsindia.com/assets/clientarea/images/banner-whats-new.gif" style="height: 300px;">
+<div class="inner-banner" style="background-size:200px, contain;top:0" data-parallax="scroll" data-image-src="{% static 'img/tea.gif'%}" style="height: 300px;">
 </div>
 
 <div class="inner-wrap">
@@ -94,355 +21,36 @@
 		<div class="tabcontent active">
 			<div class="sortproduct">
 		        <ul>
-		          <li><a href="our-teas.html" class="active">All</a></li>
-		          		          <li><a href="premium-loose-leaf.html">PREMIUM LOOSE LEAF</a></li>
-		          		          <li><a href="black-teas.html">Black Teas</a></li>
-		          		          <li><a href="green-teas.html">Green Teas</a></li>
-		          		          <li><a href="herbal-fruit-infusions.html">HERBAL &amp; FRUIT INFUSIONS</a></li>
-		          		          <li><a href="gifts.html">Gifts</a></li>
+		          <li><a href="javascript:;.html" class="active">All</a></li>
+				  {% for value in tags %}
+		          <li><a href="javascript:;.html" class="">{{value.title}}</a></li>
+				  
+				  {% endfor %}
 		          		        </ul>
 	      	</div>
 	      	<div class="prd-holder">
 	      		<ul>
-	      				      			<li>
-				      	<div class="thumb"><img src="images/products-assam.png"></div>
-					      	<div class="title">Assam Second Flush</div>
-					      						      	<div class="desc">Packed delicately from the tips of the golden yellow end buds in each leaf, it is a rich and robust ...</div>
+	      				
+					
+
+{% for value in products %}
+			      		      			<li>
+				      	<div class="thumb"><img src="{{value.image.url}}"></div>
+					      	<div class="title">{{value.title}}</div>
+					      						      	<div class="desc">{{value.description}}</div>
 					      						      	<div class="button-holder">
 					      		
-					      	<a href="https://www.amazon.in/Twinings-Assam-Second-Flush-100g/dp/B00L943KKI/ref=sr_1_1?ie=UTF8&amp;qid=1461921750&amp;sr=8-1&amp;keywords=twinings+tin" target="_blank" class="btn">BUY ONLINE</a>
+					      	<a href="{{value.shop_link}}" target="_blank" class="btn">BUY ONLINE</a>
 					        
-					      						      	<a href="assam-second-flush.html" class="btn">KNOW MORE</a>
+					      						      	<a href="/product/{{value.pk}}" class="btn">KNOW MORE</a>
 					      					      	</div>
 			      	</li>
-			      		      			<li>
-				      	<div class="thumb"><img src="images/products-darjelling-black-tea.png"></div>
-					      	<div class="title">Darjeeling Loose Leaf</div>
-					      						      	<div class="desc">One whiff of this select blend of un-oxidized leaves and your senses will embark on a journey. A gre...</div>
-					      						      	<div class="button-holder">
-					      		
-					      	<a href="https://www.amazon.in/Twinings-Darjeeling-Loose-Leaf-100g/dp/B00L943F8K/ref=sr_1_2?ie=UTF8&amp;qid=1461921750&amp;sr=8-2&amp;keywords=twinings+tin" target="_blank" class="btn">BUY ONLINE</a>
-					        
-					      						      	<a href="darjeeling-loose-leaf.html" class="btn">KNOW MORE</a>
-					      					      	</div>
-			      	</li>
-			      		      			<li>
-				      	<div class="thumb"><img src="images/products-darjeeling-green-leaf.png"></div>
-					      	<div class="title">Darjeeling Green Whole Leaf</div>
-					      						      	<div class="desc">One whiff of this select blend of un-oxidized leaves and your senses will embark on a journey. A gre...</div>
-					      						      	<div class="button-holder">
-					      		
-					      	<a href="https://www.amazon.in/Twinings-Darjeeling-Green-Whole-Leaf/dp/B00L943HR4/ref=sr_1_2?ie=UTF8&amp;qid=1464085924&amp;sr=8-2&amp;keywords=Darjeeling+Green+Whole+Leaf" target="_blank" class="btn">BUY ONLINE</a>
-					        
-					      						      	<a href="darjeeling-green-whole-leaf.html" class="btn">KNOW MORE</a>
-					      					      	</div>
-			      	</li>
-			      		      			<li>
-				      	<div class="thumb"><img src="images/products-english-breakfast-tea.png"></div>
-					      	<div class="title">English Breakfast Tea</div>
-					      						      	<div class="desc">An exquisite brew, the English Breakfast is a masterful blend of the finest black teas. It is a divi...</div>
-					      						      	<div class="button-holder">
-					      		
-					      	<a href="https://www.amazon.in/Twinings-English-Breakfast-Tea-Bags/dp/B001FB63P4/ref=sr_1_1?ie=UTF8&amp;qid=1461918597&amp;sr=8-1&amp;keywords=twinings+english+breakfast+25" target="_blank" class="btn">BUY ONLINE</a>
-					        
-					      						      	<a href="english-breakfast-tea.html" class="btn">KNOW MORE</a>
-					      					      	</div>
-			      	</li>
-			      		      			<li>
-				      	<div class="thumb"><img src="images/products-darjeeling-tea.png"></div>
-					      	<div class="title">Darjeeling Tea</div>
-					      						      	<div class="desc">Exquisitely poised with a sparkling glow, the Darjeeling Tea from Twinings is brewed using only the ...</div>
-					      						      	<div class="button-holder">
-					      		
-					      	<a href="https://www.amazon.in/Twinings-Darjeeling-25-Tea-Bags/dp/B001FB63NQ/ref=sr_1_1?ie=UTF8&amp;qid=1461918727&amp;sr=8-1&amp;keywords=twinings+darjeeling+25" target="_blank" class="btn">BUY ONLINE</a>
-					        
-					      						      	<a href="darjeeling-tea.html" class="btn">KNOW MORE</a>
-					      					      	</div>
-			      	</li>
-			      		      			<li>
-				      	<div class="thumb"><img src="images/products-classic-assam-tea.png"></div>
-					      	<div class="title">Assam Tea</div>
-					      						      	<div class="desc">Stout structure, malty piquancy and a deep amber glow. The exclusive character of Assam’s finest i...</div>
-					      						      	<div class="button-holder">
-					      		
-					      	<a href="https://www.amazon.in/Twinings-Classic-Assam-Tea-Bags/dp/B00L942G12/ref=sr_1_1?ie=UTF8&amp;qid=1461918705&amp;sr=8-1&amp;keywords=twinings+classic+assam+25" target="_blank" class="btn">BUY ONLINE</a>
-					        
-					      						      	<a href="assam-tea.html" class="btn">KNOW MORE</a>
-					      					      	</div>
-			      	</li>
-			      		      			<li>
-				      	<div class="thumb"><img src="images/products-earl-gray-tea.png"></div>
-					      	<div class="title">Earl Grey Tea</div>
-					      						      	<div class="desc">A brew of fabled origins, this mild concoction simmers with a pale golden hue. Every sip of authenti...</div>
-					      						      	<div class="button-holder">
-					      		
-					      	<a href="https://www.amazon.in/Twinings-Earl-Grey-Tea-Bags/dp/B001FB63OA/ref=sr_1_1?ie=UTF8&amp;qid=1461918622&amp;sr=8-1&amp;keywords=twinings+earl+grey+25&amp;_ga=2.226717277.132160721.1537442059-1730261750.1525861264" target="_blank" class="btn">BUY ONLINE</a>
-					        
-					      						      	<a href="earl-grey-tea.html" class="btn">KNOW MORE</a>
-					      					      	</div>
-			      	</li>
-			      		      			<li>
-				      	<div class="thumb"><img src="images/products-lemon-tea.png"></div>
-					      	<div class="title">Lemon Tea</div>
-					      						      	<div class="desc">A sublime creation that uniquely infuses the subtle citrus notes of lemon. The Lemon Tea from Twinin...</div>
-					      						      	<div class="button-holder">
-					      		
-					      	<a href="https://www.amazon.in/Twinings-Lemon-Tea-25-Bags/dp/B00L942A6I/ref=sr_1_4?ie=UTF8&amp;qid=1461918415&amp;sr=8-4&amp;keywords=twinings+lemon&amp;_ga=2.21005307.132160721.1537442059-1730261750.1525861264" target="_blank" class="btn">BUY ONLINE</a>
-					        
-					      						      	<a href="lemon-tea.html" class="btn">KNOW MORE</a>
-					      					      	</div>
-			      	</li>
-			      		      			<li>
-				      	<div class="thumb"><img src="images/products-326-606f3.png"></div>
-					      	<div class="title">English Afternoon Tea</div>
-					      						      	<div class="desc">Our English Afternoon tea is the perfect blend for a hearty, well-rounded and an invigorating cup. S...</div>
-					      						      	<div class="button-holder">
-					      	
-					      						      	<a href="english-afternoon-tea.html" class="btn">KNOW MORE</a>
-					      					      	</div>
-			      	</li>
-			      		      			<li>
-				      	<div class="thumb"><img src="images/products-pure-green-tea.png"></div>
-					      	<div class="title">Pure Green Tea</div>
-					      						      	<div class="desc">As dawn breaks and the dewy mist hangs in the air, the first buds and leaves are picked to lock in t...</div>
-					      						      	<div class="button-holder">
-					      		
-					      	<a href="https://www.amazon.in/Twinings-Green-Tea-25-Bags/dp/B00EL6XBT6/ref=sr_1_5?ie=UTF8&amp;qid=1461921450&amp;sr=8-5&amp;keywords=twinings+green+tea+25" target="_blank" class="btn">BUY ONLINE</a>
-					        
-					      						      	<a href="pure-green-tea.html" class="btn">KNOW MORE</a>
-					      					      	</div>
-			      	</li>
-			      		      			<li>
-				      	<div class="thumb"><img src="images/products-green-tea-lemon.png"></div>
-					      	<div class="title">Green Tea &amp; Lemon</div>
-					      						      	<div class="desc">The bright and perky yellows of Green Tea meet the tangy undertones of lemon. The Twinings Green Tea...</div>
-					      						      	<div class="button-holder">
-					      		
-					      	<a href="https://www.amazon.in/Twinings-Green-Tea-Lemon-Bags/dp/B006QQPVBA/ref=sr_1_1?ie=UTF8&amp;qid=1461921480&amp;sr=8-1&amp;keywords=twinings+green+tea+lemon+25" target="_blank" class="btn">BUY ONLINE</a>
-					        
-					      						      	<a href="green-tea-lemon.html" class="btn">KNOW MORE</a>
-					      					      	</div>
-			      	</li>
-			      		      			<li>
-				      	<div class="thumb"><img src="images/products-green-tea-lemon-honey.png"></div>
-					      	<div class="title">Green Tea Lemon And Honey</div>
-					      						      	<div class="desc">A dash of lemon, carefully contrasted with the natural sweetness of honey, lends this delicate blend...</div>
-					      						      	<div class="button-holder">
-					      		
-					      	<a href="https://www.amazon.in/Twinings-Green-Lemon-Honey-Bags/dp/B00L942Q3U/ref=sr_1_1?ie=UTF8&amp;qid=1461921425&amp;sr=8-1&amp;keywords=twinings+honey+25" target="_blank" class="btn">BUY ONLINE</a>
-					        
-					      						      	<a href="green-tea-lemon-and-honey.html" class="btn">KNOW MORE</a>
-					      					      	</div>
-			      	</li>
-			      		      			<li>
-				      	<div class="thumb"><img src="images/products-green-tea-mint.png"></div>
-					      	<div class="title">Green Tea &amp; Mint</div>
-					      						      	<div class="desc">The cool and calming character of mint is blended brilliantly with the delicate grassy notes of Gree...</div>
-					      						      	<div class="button-holder">
-					      		
-					      	<a href="https://www.amazon.in/Twinings-Green-Tea-Mint-Bags/dp/B006QQPVO2/ref=sr_1_1?ie=UTF8&amp;qid=1461921507&amp;sr=8-1&amp;keywords=twinings+green+tea+mint+25" target="_blank" class="btn">BUY ONLINE</a>
-					        
-					      						      	<a href="green-tea-mint.html" class="btn">KNOW MORE</a>
-					      					      	</div>
-			      	</li>
-			      		      			<li>
-				      	<div class="thumb"><img src="images/products-green-tea-jasmine.png"></div>
-					      	<div class="title">Green Tea Jasmine</div>
-					      						      	<div class="desc">Subtly sweet, this delightful blend blossoms with the delicate undertones of Jasmine. The addition o...</div>
-					      						      	<div class="button-holder">
-					      		
-					      	<a href="https://www.amazon.in/Twinings-Jasmine-Green-Tea-Bags/dp/B00MVO4130/ref=sr_1_1?ie=UTF8&amp;qid=1461921533&amp;sr=8-1&amp;keywords=twinings+green+tea+jasmine+25" target="_blank" class="btn">BUY ONLINE</a>
-					        
-					      						      	<a href="green-tea-jasmine.html" class="btn">KNOW MORE</a>
-					      					      	</div>
-			      	</li>
-			      		      			<li>
-				      	<div class="thumb"><img src="images/products-earl-gray-green-tea.png"></div>
-					      	<div class="title">Green Tea Earl Grey</div>
-					      						      	<div class="desc">The delicate citrusy essence of Bergamot embellishes the bright and perky flavour of Green Tea. A ma...</div>
-					      						      	<div class="button-holder">
-					      		
-					      	<a href="https://www.amazon.in/Twinings-Green-Earl-Grey-Bags/dp/B00MVO44DW/ref=sr_1_1?ie=UTF8&amp;qid=1461921556&amp;sr=8-1&amp;keywords=twinings+green+tea+earl+grey+25" target="_blank" class="btn">BUY ONLINE</a>
-					        
-					      						      	<a href="green-tea-earl-grey.html" class="btn">KNOW MORE</a>
-					      					      	</div>
-			      	</li>
-			      		      			<li>
-				      	<div class="thumb"><img src="images/products-greentea-cranberry.png"></div>
-					      	<div class="title">Green Tea Cranberry</div>
-					      						      	<div class="desc">Green tea &amp; cranberries come together to create an indulgent blend. Cranberries with their deep red ...</div>
-					      						      	<div class="button-holder">
-					      		
-					      	<a href="https://www.amazon.in/Twinings-Green-Tea-Cranberry-Bags/dp/B07F885591?_ga=2.259146314.132160721.1537442059-1730261750.1525861264" target="_blank" class="btn">BUY ONLINE</a>
-					        
-					      						      	<a href="green-tea-cranberry.html" class="btn">KNOW MORE</a>
-					      					      	</div>
-			      	</li>
-			      		      			<li>
-				      	<div class="thumb"><img src="images/products-greentea-pomegranate.png"></div>
-					      	<div class="title">Green Tea Pomegranate</div>
-					      						      	<div class="desc">Green Tea &amp; pomegranate create an intriguing blend. This deep pink fruit with its naturally sharp ye...</div>
-					      						      	<div class="button-holder">
-					      		
-					      	<a href="https://www.amazon.in/Twinings-Green-Tea-Pomegranate-Bags/dp/B07F87XDB7" target="_blank" class="btn">BUY ONLINE</a>
-					        
-					      						      	<a href="green-tea-pomegranate.html" class="btn">KNOW MORE</a>
-					      					      	</div>
-			      	</li>
-			      		      			<li>
-				      	<div class="thumb"><img src="images/products-greentea-green-apple.png"></div>
-					      	<div class="title">Green Tea Green Apple</div>
-					      						      	<div class="desc">Green Tea &amp; Green Apple create a perfectly balanced drink. A little added sunshine to your day. Savo...</div>
-					      						      	<div class="button-holder">
-					      		
-					      	<a href="https://www.amazon.in/Twinings-Green-Tea-Apple-Bags/dp/B07F873VYR" target="_blank" class="btn">BUY ONLINE</a>
-					        
-					      						      	<a href="green-tea-green-apple.html" class="btn">KNOW MORE</a>
-					      					      	</div>
-			      	</li>
-			      		      			<li>
-				      	<div class="thumb"><img src="images/products-greentea-strawberry.png"></div>
-					      	<div class="title">Green Tea Strawberry</div>
-					      						      	<div class="desc">Green Tea &amp; Strawberries create an exotic twist to the regular. The sweet subtle flavour of beautifu...</div>
-					      						      	<div class="button-holder">
-					      		
-					      	<a href="https://www.amazon.in/Twinings-Green-Tea-Strawberry-Bags/dp/B07F862HBX" target="_blank" class="btn">BUY ONLINE</a>
-					        
-					      						      	<a href="green-tea-strawberry.html" class="btn">KNOW MORE</a>
-					      					      	</div>
-			      	</li>
-			      		      			<li>
-				      	<div class="thumb"><img src="images/products-camomile-tea.png"></div>
-					      	<div class="title">Pure Camomile</div>
-					      						      	<div class="desc">Known for their innate calming quality, Camomile flowers make this delicate infusion the perfect bed...</div>
-					      						      	<div class="button-holder">
-					      		
-					      	<a href="https://www.amazon.in/Twinings-Camomile-Tea-25-Bags/dp/B005IU6OO8/ref=sr_1_sc_1?ie=UTF8&amp;qid=1461921666&amp;sr=8-1-spell&amp;keywords=twining+comomile" target="_blank" class="btn">BUY ONLINE</a>
-					        
-					      						      	<a href="pure-camomile.html" class="btn">KNOW MORE</a>
-					      					      	</div>
-			      	</li>
-			      		      			<li>
-				      	<div class="thumb"><img src="images/products-peppermint.png"></div>
-					      	<div class="title">Pure Peppermint</div>
-					      						      	<div class="desc">Noticeably sweet, and with a pronounced minty flavour &amp; aroma, this concoction from Twinings presses...</div>
-					      						      	<div class="button-holder">
-					      		
-					      	<a href="https://www.amazon.in/Twinings-Peppermint-25-Tea-Bags/dp/B003UFM8HU/ref=sr_1_1?ie=UTF8&amp;qid=1461921693&amp;sr=8-1&amp;keywords=twinings+peppermint" target="_blank" class="btn">BUY ONLINE</a>
-					        
-					      						      	<a href="pure-peppermint.html" class="btn">KNOW MORE</a>
-					      					      	</div>
-			      	</li>
-			      		      			<li>
-				      	<div class="thumb"><img src="images/products-lemon-ginger-tea.png"></div>
-					      	<div class="title">Lemon &amp; Ginger</div>
-					      						      	<div class="desc">A warming infusion where the spiciness of ginger is balanced with the zesty taste of lemon. It has n...</div>
-					      						      	<div class="button-holder">
-					      		
-					      	<a href="https://www.amazon.in/Twinings-Lemon-Ginger-Tea-Bags/dp/B000P5UDSE/ref=sr_1_1?ie=UTF8&amp;qid=1461921640&amp;sr=8-1&amp;keywords=twinings+lemon+ginger" target="_blank" class="btn">BUY ONLINE</a>
-					        
-					      						      	<a href="lemon-ginger.html" class="btn">KNOW MORE</a>
-					      					      	</div>
-			      	</li>
-			      		      			<li>
-				      	<div class="thumb"><img src="images/products-gift-1.png"></div>
-					      	<div class="title">4 Blends</div>
-					      						      	<div class="desc">Enjoy a variety of your favourite and finest tea blends in the perfectly crafted 4 slot Twinings Tea Chest.<br>
-*Available during festive period</div>
-					      						      	<div class="button-holder">
-					      		
-					      	<a href="https://www.amazon.in/Twinings-Chestlets-Gift-Blocks-100g/dp/B016MPD6VQ" target="_blank" class="btn">BUY ONLINE</a>
-					        
-					      					      	</div>
-			      	</li>
-			      		      			<li>
-				      	<div class="thumb"><img src="images/products-gift-2.png"></div>
-					      	<div class="title">6 Blends</div>
-					      						      	<div class="desc">Nothing less than the exquisitely crafted 6 cabinet Twinings Tea Chest for your favourite people.<br>
-*Available during festive period</div>
-					      						      	<div class="button-holder">
-					      		
-					      	<a href="https://www.amazon.in/Twinings-Chestlets-Gift-Blocks-1300g/dp/B016MPD6E8" target="_blank" class="btn">BUY ONLINE</a>
-					        
-					      					      	</div>
-			      	</li>
-			      		      			<li>
-				      	<div class="thumb"><img src="images/products-gift-3.png"></div>
-					      	<div class="title">9 Blends</div>
-					      						      	<div class="desc">Gift your loved ones the finest 9 cabinet Twinings Tea Chest and show how much you care for them.<br>
-*Available during festive period</div>
-					      						      	<div class="button-holder">
-					      		
-					      	<a href="https://www.amazon.in/Twinings-Chestlet-Gift-Box-Blocks/dp/B00TS0UT68" target="_blank" class="btn">BUY ONLINE</a>
-					        
-					      					      	</div>
-			      	</li>
+
+{% endfor %}
+
 			      		      		</ul>
 	      	</div>
 		</div>
 	</div>
-</div><footer>
-  <div class="footer-arrow"><img src="images/images-footer-arrow.png"></div>
-  <div class="wrap">
-    <div class="head">
-      <h6> <span class="left"></span> Connect with us <span class="right"></span> </h6>
-    </div>
-     <div class="social">
-              <ul>
-                 <li><a href="https://www.facebook.com/TwiningsIndia" target="_blank" class="fb">Facebook</a></li>
-                 <li><a href="https://twitter.com/twiningsindia" target="_blank" class="twitter">Twitter</a></li>
-                 <li><a href="https://www.instagram.com/twiningsindia/" target="_blank" class="insta">Instagram</a></li>
-                 <li><a href="https://www.youtube.com/user/TwiningsIndia" target="_blank" class="pin">Pinit</a></li> 
-              </ul>
-  </div>
-    <div class="newsletter">
-		<label>SIGN-UP FOR TEAMAILS</label>
-		<div class="{{ result }} alert">{{ result_subscription_message }}</div>
-		<input type="text" value="Your Email Address" id="subscriptionemail" class="inputxt nt">
-		<button type="button" class="btn-arrow" ng-click="submitSubscription()"><i class="ion-arrow-right-c"></i></button>
-    </div>
-
-    <div class="footer-add">
-      <p>Corporate Office: 514, 5th Floor, Bestech Chambers, Block-B, Sushant Lok- Phase-1, Sector-27, Gurgaon – 122002, Haryana</p>
-    </div>  
-    
-    <div class="copyright"> © 2018 R. Twining and Company Limited. </div>
-  </div>
-</footer>
-<!-- <div class="cookie-notification">
-  <div class="container">
-    <div class="txt">We use cookies on twiningsindia.com to ensure that we can give you the very best experience. To find out more about how we use cookies, please visit the <a href="/cookie-policy">cookie policy</a> page</div>
-    <div class="cta"><a href="javascript:;" onclick="cookieAccept()">Close</a></div>
-  </div>
-</div> -->
-
-<script src="js/js-jquery-3.3.1.min.js" type="text/javascript"></script> 
-<script src="js/js-greensockb3a6.js" type="text/javascript"></script> 
-<script src="js/js-TweenMax.min.js" type="text/javascript"></script> 
-<script src="js/js-layerslider.kreaturamediaaafb.js" type="text/javascript"></script> 
-<script src="js/js-layerslider.transitionsaafb.js" type="text/javascript"></script> 
-<script src="js/js-parallax.min.js" type="text/javascript"></script> 
-<script data-cfasync="false" src="js/js-custom.js" type="text/javascript"></script>
-<script src="js/pages-app.js" type="text/javascript"></script>
-
-
-<style>
-	.success.alert {
-		color: green;
-	}
-	.error.alert {
-		color: red;
-	}
-	.error.alert {
-		color: red;
-	}
-	.errormsg{
-		color: red;
-		float:left;
-		text-align: left;
-	}
- </style>
-
-
-</body>
-</html>
+</div>
+{% endblock %}

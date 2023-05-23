@@ -1,0 +1,59 @@
+
+{% extends 'nav.html' %}
+{% load static %}
+{% block content %}
+
+<div class="breadcrumb">
+	<ul>
+		<li><a href="/">HOME</a></li>
+		<li><a href="/our-tea">OUR TEAS</a></li>
+		<li>{{product.title}}</li>
+	</ul>
+</div>
+<div class="inner-wrap">
+	<div class="prd-desc-wrap">
+		<div class="left-cont">
+			<div class="slider">
+				<div class="item"><img src="{{product.image.url}}"/></div>
+			</div>
+		</div>
+		<div class="right-cont">
+			<div class="heading">{{product.title}}</div>
+			<div class="prd-price-details">
+				<span>Net weight: {{product.weight}}</span>
+			</div>
+			<div class="desc-title">
+			</div>
+			<div class="desc">
+				<p>{{product.description}}</p>
+			</div>
+						<div class="button-holder">
+				<a href="{{product.shop_link}}" target="_blank" class="btn">BUY ONLINE</a>
+			</div>
+					</div>
+	</div>
+</div>
+<div class="white-sec">
+	<div class="heading">MORE ABOUT THE PRODUCT</div>
+	<div class="about-product-holder">
+		<ul>
+			<li>
+	  			<div class="icon"><img src="{% static 'img/ingredients.svg' %}"/></div>
+	  			<div class="head">INGREDIENTS</div>
+	  			<div class="abt-prd">{{product.ingridents}}</div>
+			</li>
+			<li>
+			  	<div class="icon"><img src="{% static 'img/how-to-serve.svg'%}"/></div>
+			  	<div class="head">HOW TO SERVE</div>
+			 	<div class="abt-prd">{{product.how_to_serve}}</div>
+			</li>
+			<li>
+				<div class="icon"><img src="{% static 'img/sourced-with-care.svg'%}"/></div>
+			  	<div class="head">SOURCED WITH CARE</div>
+			  	<div class="abt-prd">At Gold Bazel we believe that everyone has the right to a decent quality of life and to be able to provide for themselves and their families. We aim & work at improving the quality of life in communities from where we source our products. Gold Bazel aims to buy from the best estates, both in terms of quality and social standards.</div>
+			</li>
+		</ul>
+	</div>
+</div>
+
+{% endblock %}

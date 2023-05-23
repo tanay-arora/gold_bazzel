@@ -20,4 +20,19 @@ class recipeAdmin(admin.ModelAdmin):
 @admin.register(tag)
 class tagAdmin(admin.ModelAdmin):
     list_display = ["title"]
-    
+
+@admin.register(csr)
+class tagAdmin(admin.ModelAdmin):
+    list_display = ["title"]
+
+@admin.register(prize_points)
+class tagAdmin(admin.ModelAdmin):
+    list_display = ["prize", "points"]
+
+@admin.register(point_per_purchase)
+class tagAdmin(admin.ModelAdmin):
+    list_display = [ "points"]
+
+@admin.register(dealers)
+class tagAdmin(admin.ModelAdmin):
+    list_display = ["name", "points"]

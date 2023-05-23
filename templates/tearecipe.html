@@ -1,0 +1,33 @@
+
+{% extends 'nav.html' %}
+{% load static %}
+{% block content %}
+
+<div class="breadcrumb">
+	<ul>
+		<li><a href="/">HOME</a></li>
+		<li><a href="/recipe">TEA RECIPES</a></li>
+		<li>{{recipe.title}}</li>
+	</ul>
+</div>
+
+<div class="single-post">
+	<div class="inner-wrap">
+		<div class="inner-heading-color">
+		    <h3>{{recipe.title}}</h3>
+            <br>
+	  	</div>
+	  	<div class="single-banner">
+		    <div class="figure">
+		      <img class="img-responsive" src="{{recipe.image.url}}"/>
+		    </div>
+	  	</div>
+
+          <div style="text-align:left">
+            {{recipe.content | safe }}
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

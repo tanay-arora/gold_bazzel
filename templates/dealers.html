@@ -1,0 +1,127 @@
+
+
+{% extends 'nav.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+<script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
+<div class="breadcrumb">
+<ul>
+<li><a href="/">HOME</a></li>
+<li>OUR DEALERS</li>
+</ul>
+</div>
+
+<div class="inner-wrap">
+
+  <div class="inner-heading-color" id="uber-promo">
+    <h3>Our Dealers</h3>
+</div>
+<div style="text-align:center;overflow:auto">
+  <div class="list-layout" >
+  
+  
+  <div class="mdc-data-table">
+    <div class="mdc-data-table__table-container">
+      <table class="mdc-data-table__table" aria-label="Dessert calories" style="width:100%;min-width:1000px">
+        <thead>
+          <tr class="mdc-data-table__header-row">
+            <th class="mdc-data-table__header-cell" role="columnheader" scope="col">SNO.</th>
+            <th class="mdc-data-table__header-cell " role="columnheader" scope="col">Dealer's photo </th>
+            <th class="mdc-data-table__header-cell " role="columnheader" scope="col">Dealer's Name</th>
+            <th class="mdc-data-table__header-cell " role="columnheader" scope="col">Total points </th>
+          </tr>
+        </thead>
+        <tbody class="mdc-data-table__content">
+         {% for value in dealers %}
+          <tr class="mdc-data-table__row">
+            <td class="mdc-data-table__cell ">{{ forloop.counter }}</td>
+            <td class="mdc-data-table__cell "><img style="width:240px;max-height:240px" src="{{value.image.url}}"></td>
+
+            <td class="mdc-data-table__cell ">{{value.name}}</td>
+            <td class="mdc-data-table__cell ">{{value.points}}</td>
+
+            
+          </tr>
+         {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+<div class="inner-heading-color" id="uber-promo">
+    <h3>Our Prizes</h3>
+</div>
+<div style="text-align:center">
+<div class="list-layout" >
+<div  style="overflow:auto">
+  <div class="mdc-data-table">
+  <div class="mdc-data-table__table-container">
+    <table class="mdc-data-table__table" aria-label="Dessert calories" style="width:100%;min-width:1000px">
+      <thead>
+        <tr class="mdc-data-table__header-row">
+          <th class="mdc-data-table__header-cell" role="columnheader" scope="col">SNO.</th>
+          <th class="mdc-data-table__header-cell " role="columnheader" scope="col">Prize </th>
+          <th class="mdc-data-table__header-cell " role="columnheader" scope="col">Title </th>
+          <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Points</th>
+        </tr>
+      </thead>
+      <tbody class="mdc-data-table__content">
+       {% for value in prizes %}
+        <tr class="mdc-data-table__row">
+            <td class="mdc-data-table__cell ">{{ forloop.counter }}</td>
+          <td class="mdc-data-table__cell "><img style="width:240px;max-height:240px" src="{{value.image.url}}"></td>
+          <td class="mdc-data-table__cell ">{{value.prize}}</td>
+          <td class="mdc-data-table__cell ">{{value.points}}</td>
+        </tr>
+{% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+
+<div class="inner-heading-color" id="uber-promo">
+  <h3>How to earn points</h3>
+</div>
+
+<div  style="overflow:auto">
+<div class="mdc-data-table">
+  <div class="mdc-data-table__table-container">
+    <table class="mdc-data-table__table" aria-label="Dessert calories" style="width:100%;min-width:1000px">
+      <thead>
+        <tr class="mdc-data-table__header-row">
+            <th class="mdc-data-table__header-cell" role="columnheader" scope="col">SNO.</th>
+          <th class="mdc-data-table__header-cell " role="columnheader" scope="col">Product Image </th>
+          <th class="mdc-data-table__header-cell " role="columnheader" scope="col"> quantity</th>
+          <th class="mdc-data-table__header-cell" role="columnheader" scope="col">Points</th>
+
+        </tr>
+      </thead>
+      <tbody class="mdc-data-table__content">
+      {% for value in purchases %} 
+        <tr class="mdc-data-table__row">
+            <td class="mdc-data-table__cell ">{{ forloop.counter }}</td>
+          <td class="mdc-data-table__cell "><img style="width:240px;max-height:340px" src="{{value.product.image.url}}"></td>
+          <td class="mdc-data-table__cell ">1 kg</td>
+          <td class="mdc-data-table__cell ">{{value.points}}</td>
+          
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+
+  
+</div>
+</div>
+</div>
+<div style="height:100px"></div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'nav.html' %}
+{% load static %}
+
+    {% block content %}
+
+<div class="breadcrumb">
+  <ul>
+    <li><a href="/">HOME</a></li>
+    <li><a href="/indian-life}">INDIAN LIFE</a></li>
+    <li>{{value.title}}</li>
+  </ul>
+</div>
+<div class="inner-wrap">
+	<div class="page-heading">
+		<h3>{{story.title}}</h3>
+		<h5>{{story.author}}</h5>
+		<div class="pro-img column">
+			<img src="{{story.image.url}}" class="img-responsive" alt="" title="" />
+		</div>
+        <span>
+            {{story.content | safe}}
+        </span>
+        </div>
+</div>
+
+{% endblock %}

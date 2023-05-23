@@ -1,0 +1,50 @@
+
+
+{% extends 'nav.html' %}
+{% load static %}
+{% block content %}
+
+<div class="breadcrumb">
+	<ul>
+		<li><a href="/">HOME</a></li>
+		<li>The Indian Life</li>
+	</ul>
+</div>
+<div class="inner-banner whtsnew london-life" data-parallax="scroll" data-image-src="{% static 'img/life-bg.png' %}">
+</div>
+<div class="arbg">
+	<div class="inner-wrap">
+
+		<div class="inner-heading-color ll">
+		    <h3><span>The</span> <span style="font-family:cursive;font-size:46px;font-style: italic;font-weight:600">Indian</span> <span>life</span></h3>
+		</div>
+
+
+		<div class="list-layout london">
+						
+		
+
+
+		 				{% for value in blogs %}
+		  	<div class="row ">
+		      	<div class="col-12">
+			        <div class="imgwrap">
+			            <img src="{{value.image.url}}">
+			        </div>
+			        <div class="content">
+			            <h3>{{value.title}}</h3>
+			            <p>{{value.description}}</p>
+			            <a href="/story/{{value.pk}}" class="btn">Read More</a>
+			        </div>
+		      	</div>
+		 	</div>
+{% endfor %}
+		 				
+		  
+
+		 			 
+		</div>
+
+	</div>
+</div>
+{% endblock %}
