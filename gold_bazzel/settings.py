@@ -14,7 +14,8 @@ SECRET_KEY = 'django-insecure-_@i@8hyim7&3is3^i2!s0+3d34b1z^jtq_0bcrm#osr2r_h77f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["170.187.235.116"]
+ALLOWED_HOSTS = ["172.105.59.140","goldbezelofficial.com","http://goldbezelofficial.com","https://goldbezelofficial.com"]
+CSRF_TRUSTED_ORIGINS = ["http://goldbezelofficial.com","https://goldbezelofficial.com"]
 
 
 # Application definition
@@ -27,7 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
-    'home',
+    'home', 'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -38,6 +39,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'gold_bazzel.urls'
@@ -101,6 +103,10 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+CORS_ALLOWED_ORIGINS = [
+    'https://goldbezelofficial.com',
+]
 
 
 # Static files (CSS, JavaScript, Images)
