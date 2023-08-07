@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-_@i@8hyim7&3is3^i2!s0+3d34b1z^jtq_0bcrm#osr2r_h77f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["172.105.59.140","goldbezelofficial.com","http://goldbezelofficial.com","https://goldbezelofficial.com"]
+ALLOWED_HOSTS = ["172.105.59.140","goldbezelofficial.com","www.goldbezelofficial.com",'localhost',"http://goldbezelofficial.com","https://goldbezelofficial.com"]
 CSRF_TRUSTED_ORIGINS = ["http://goldbezelofficial.com","https://goldbezelofficial.com"]
 
 

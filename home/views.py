@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import View
 from home.models import *
+from django.http import JsonResponse
 
 class HoomeView(View):
     def get(self, request, *args, **kwargs):
@@ -64,6 +65,22 @@ class ContactView(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'contact.html')
     
+    def post(self, request, *args, **kwargs):
+        print(request.POST.get('name'))
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phoneno = request.POST.get('phoneno')
+        city = request.POST.get('city')
+        message = request.POST.get('message')
+        
+
+        if name and email and message and phoneno and city:
+            contact_message = Contact.objects.create(name=name, email=email, city=city,phoneno=phoneno, message=message)
+            return JsonResponse({"status": "success"})
+        else:
+            errors = form.errors
+            return JsonResponse({"status": "error", "errors": errors})
+
 class BlogView(View):
     def get(self, request, *args, **kwargs):
         return render(request, 'blog.html')

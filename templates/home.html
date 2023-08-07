@@ -24,8 +24,8 @@
 
     <div class="product-container">
       <div class="wrap">
-        <div class="heading"> <span></span>  Find your perfect blend <span></span> </div>
-        <div class="subheading"> Invigorate the senses with world-class flavors of exquisite tea</div>
+        <div class="heading"> <span></span>  Discover Your Perfect Fusion <span></span> </div>
+        <div class="subheading">”Discover the Essence of Tea - Where Every Sip Tells a Story”</div>
         
         {% for value in teas %}
         <div class="reusable">
@@ -34,7 +34,7 @@
             <div class="head" style="height:auto;min-height:36px">{{value.title}} </div>
             <div class="details">{{value.description}}</div>
           </div>
-          <div class="black leaf"><img src="{% static 'img/black-bg.png' %}" data-set="{% static 'img/black-bg-hover.png' %}"></div>
+          <!-- <div class="black leaf"><img src="{% static 'img/black-bg.png' %}" data-set="{% static 'img/black-bg-hover.png' %}"></div> -->
         </div>
         {% endfor %}
 
@@ -45,11 +45,10 @@
 
   <!-- /container -->
   <div class="parallax-window" data-parallax="scroll" id="random">
-    <div class="arrow"><img src="{% static 'img/images-arrow-prallax.png' %}"></div>
+    <div class="arrow"><img style="filter: brightness(0%) !important" src="{% static 'img/images-arrow-prallax.png' %}"></div>
     <div class="bottom-parallex">
       <div class="wrapr">
-		  <h4>Delectable Tea Pairings You Should Try</h4>
-        <h3>Delectable Tea Pairings You Should Try</h3>
+		  <h4>"Embark on a Flavorful Adventure - Let Our Teas Ignite Your Taste Buds!”</h4>
         <h3 class="subheading">Black Tea Pairing</h3>
         <p>Oozing with robust flavor, loaded with tannins, black tea goes best with full-flavored foods. <br>The stout structure of black tea marries artfully with strong flavors in a hearty meal and <br>enhances your dining experience as a whole.</p>
       </div>
@@ -80,13 +79,15 @@
     <div class="heading"> <span></span> Indian Life <span></span> </div>
     {% for value in blogs %}
 
+        {% if forloop.counter < 3 %}
         <div class="reusable">
-      <div class="thumbs"> <img src="{{value.image.url}}"> </div>
-      <div class="desc">
-        <div class="head">{{value.title}}</div>
-        <div class="details">{{value.description}}</div>
-        <a href="/story/{{value.pk}}" class="btn-explore">Read More</a> </div>
-    </div>
+          <div class="thumbs"> <img src="{{value.image.url}}"> </div>
+          <div class="desc">
+            <div class="head">{{value.title}}</div>
+            <div class="details">{{value.description}}</div>
+            <a href="/story/{{value.pk}}" class="btn-explore">Read More</a> </div>
+        </div>
+        {% endif %}
    {% endfor %}
    
       </div>

@@ -19,9 +19,9 @@
    	</div>
 
 	<div class="contactwrap">
-		<form action="https://www.twiningsindia.com/clientarea/save_conatct_us" name="contactus" id="contactus" method="post" ng-submit="saveContactUs($event)">
+		<form name="contactus" id="contactus" method="post" >
 			<div class="{{ result }} alert" ng-class="{result=='success'}">{{ result_message }}</div>
-			<!--<div class="error alert" id="savedetail_error">{{ message }}</div>-->
+			
 			<div class="row">
      			<div class="col-12">
      				<span class="noerror" ng-class="{errormsg: contactus.name.$error.pattern}">Please input valid name only!</span>
@@ -52,55 +52,48 @@
 			</div>
 		  	<div class="row">
 		    	<div class="col-12">
-					<input type="checkbox" name="termandconditions" required="required">
-					<span>By submitting this form, I hereby confirm that I've reviewed the <a id="privacy-txt" href="javascript:;.html" style="color:#c7b57a; text-decoration: none;">privacy policy</a> for this website.</span>
-				</div>
-			</div>
-		  	<div class="row">
-		    	<div class="col-12">
 		       		<input type="submit" class="btn" value="Submit" ng-disabled="contactus.name.$error.pattern || contactus.email.$error.email || contactus.phoneno.$error.pattern || contactus.city.$error.pattern || contactus.message.$error.pattern">
 		     	</div>
 		  	</div>
-		</form></div>
+		</form>
+	</div>
+
+	<!-- Include jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Add the following script to handle the AJAX form submission -->
+<script>
+$(document).ready(function() {
+    $("#contactus").submit(function(event) {
+        event.preventDefault();
+		var form = $(this);
+        var formData = $(this).serialize();
+
+        $.ajaxSetup({
+            headers: { "X-CSRFToken": "{{ csrf_token }}" } // Include the CSRF token in the headers
+        });
+		console.log(formData);
+        $.ajax({
+            type: "POST",
+            url: window.location.href, 
+            data: formData,
+            success: function(response) {
+                if (response.status == "success") {
+					form.trigger("reset");
+                    alert("Your response saved successfully! we'll get back to you shortly.");
+                } else if (response.status == "error") {
+                    $(".result").addClass("alert-danger").text("An error occurred while sending the message.");
+                }
+            },
+            error: function() {
+                $(".result").addClass("alert-danger").text("An error occurred while sending the message.");
+            }
+        });
+    });
+});
+</script>
+
 	
-	<div class="privacy">
-   <div class="inner">
-    <a href="javascript:;.html" class="close ion-ios-close-outline"></a>
-    <h3>Privacy Policy</h3>
-    <div class="txt">
-    <h4>PRIVACY INTRODUCTION </h4>
-		<p><a href="www.twiningsindia.html" target="_blank">www.twiningsindia.com</a> (the  "Website") is owned and operated by Twinings Private Limited (TPL) a company incorporated in India having registered office at 514, 5th Floor, Bestech Chambers, Block-B, Sushant Lok- Phase-1, Sector-27, Gurgaon – 122002, Haryana. </p>
-		<p>Twinings are committed to protecting and respecting your privacy and complying with applicable laws for the protection of personal data. This policy sets out (1) the type of information we collect from you when you visit the Website; and (2) the way we treat any information we collect from you, or that you provide to us through the Website.</p>
-		<p>This Privacy Policy forms part of the Website Terms &amp; Conditions and by submitting your personal information to the Website, you are confirming that you have read and understood this Privacy Policy and are agreeing to the uses of your personal information described in it.</p>
-		<h4>BEFORE YOU START</h4>
-		<p>Parts of our Website may contain links to third party websites for your convenience and information. When you access a third party website through such link please understand that we do not control the content and are not responsible for the privacy practices of that site even where they may contain Twinings or associated company logos. We suggest that you carefully review the privacy policies of those websites linked from our site. These sites may send their own cookies to users, collect data or solicit personal information.</p>
-		<h4>INFORMATION COLLECTED  THROUGH OUR WEBSITE</h4><p>When you visit our Website, we may collect information on two different levels about your visit: (1) Statistical Information, collected as you browse the site, and (2) Personal Information which you knowingly give to us.</p>
-		<h4>(1) STATISTICAL INFORMATION</h4>
-		<p>In general this Website automatically gathers certain usage information such as the number and frequency of visitors to our Website, very much like the television ratings that tell the networks how many people tune into the programmes. We may also invite you to interact with our Website by answering questions and selecting preferences as you move around the Website. We only use this data in an aggregated and non-personally identifiable way. The collected data helps us to determine our visitor's preferences, and to improve our Website so it is as appealing as we can make it for as many of you as possible.</p><p>Most browsers automatically accept cookies, but you can usually refuse cookies, or selectively accept certain cookies, by adjusting the preferences in your browser. If you turn off cookies, there may be some features of our site that will not be available to you and some Web pages may not display properly.</p><p>We do not combine information collected through cookies with any personal information you tell us about yourself.</p>
-		<h4>(2) PERSONAL INFORMATION</h4>
-		<h5>(a) HOW WE COLLECT YOUR  PERSONAL INFORMATION</h5><p>
-		The only personal information we collect from you is information you choose to provide us about yourself.</p><p>Some services and facilities on our Website we will require you to provide us with a certain minimum amount of personal information such as your name and email address in order that we can provide those services to you or to fulfil our obligations to you ("Required Information"). Typical examples where this arises include entering one of our competitions, prize draws or promotions or registering as a user on our Website.</p><p>We may also ask you to provide additional information about yourself to assist in us contacting you or providing our services ("Voluntary Information"). We will make it clear what information is Required Information and what is Voluntary Information.</p>
-		<h5>(b) How long do we keep this information for?</h5>
-		<p>We will only keep information about your visit to our Website for as long as is necessary for the purposes we’ve mentioned. Typically we delete browsing data every 12 months.</p>
-		<h5>(c) HOW WE USE YOUR  PERSONAL INFORMATION</h5>
-		<p>We will use your personal information for the purpose it has been collected or any other purpose specified at the point of collection. For example, we will retain and use your personal information for the purpose of administrating and notifying you of the results of any competitions or prize draws you have entered.</p>
-		<h5>(d) DIRECT MARKETING</h5>
-		<p>If you have agreed to receive direct marketing from Twinings we may from time to time contact you via phone, post, email or SMS text message in order to send you news and offers and to help formulate our marketing and business strategy for example, to ask your views on how we can improve our products and services, and for the purpose of analysing and researching our business, customers and products.</p>
-		<h5>(e) OPTING OUT AND UPDATING  PERSONAL INFORMATION</h5>
-		<p>Any time after you register your personal information with us you may (i) opt out of receiving any communications you have chosen to receive from us; and (ii) update your personal information by notifying us of changes to the information previously given to us.</p>
-		<p>All requests or notifications should be sent to <a href="mailto:consumer.speak@twinings.com">consumer.speak@twinings.com</a></p>
-		<h5>(f) SHARING YOUR PERSONAL  INFORMATION</h5>
-		<p>We will sometimes need to share your personal information with third parties who we contract to help us deliver services to you and to run and administer the Website and activities run through the Website such as competitions. The information shared with them will be limited to that necessary for them to perform the service. They will not be authorized to make any other use of that information and will treat it confidentially.</p><p>Except as described in the previous paragraph, we do not share your personal  information with any third party which is not a subsidiary or parent company of  Twinings other than: (i) where it is required by law; (ii) if you specifically  authorised us to do so; or (iii) in the event that substantially all of the  assets of Twinings are acquired by a third party in which case personal data  held by it about its customers in its databases will be one of the transferred  assets.</p>
-		<h4>SECURITY</h4>
-		<p>We take appropriate technical and organisational measures to prevent accidental or unlawful destruction or unauthorised disclosure, access or alteration to your personal information under our control.</p><p>We will only store your data for as long as reasonably necessary in the circumstance, after which your personal information will be deleted from our systems.</p><p>
-		However, the transmission of information via the internet is not completely secure. Although we will do our best to protect your personal information, we cannot guarantee the security of your information transmitted to our site; any transmission is at your own risk. Once we have received your information, we will use strict procedures to try to prevent unauthorised access.</p>
-		<h4>CHANGES TO PRIVACY POLICY</h4>
-		<p>Any changes that we make to this privacy policy will be posted on this page. Please regularly check the privacy policy for changes. Any changes that we do make to this privacy policy will apply to information provided through the Website following the revised privacy policy being posted. Regardless of any changes we make to our privacy policy, we will continue to use your personal information collected before the change in accordance with the version of the policy in place at the time you provided your information, unless you give your express consent for us to do otherwise.</p>
-		<h4>CONTACT</h4>
-		<p>If you have any questions about this privacy policy or your privacy, you can  contact us at by email at <a href="mailto:consumer.speak@twinings.com">consumer.speak@twinings.com</a></p>
-		   </div>
-		  </div>
-	</div> 
 </div>
 <div class="overlay"></div>
 <style type="text/css">

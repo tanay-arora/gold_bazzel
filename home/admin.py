@@ -21,6 +21,10 @@ class recipeAdmin(admin.ModelAdmin):
 class tagAdmin(admin.ModelAdmin):
     list_display = ["title"]
 
+@admin.register(Contact)
+class tagAdmin(admin.ModelAdmin):
+    list_display = ["name","email","phoneno","city"]
+
 @admin.register(csr)
 class tagAdmin(admin.ModelAdmin):
     list_display = ["title"]

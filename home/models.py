@@ -69,3 +69,13 @@ class dealers(models.Model):
     points = models.CharField(max_length=18)
     def __str__(self) -> str:
            return self.name
+
+class Contact(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    phoneno = models.CharField(max_length=10)
+    city = models.CharField(max_length=100)
+    message = models.TextField()
+
+    def __str__(self):
+        return self.name
