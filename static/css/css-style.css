@@ -730,7 +730,7 @@ width: auto;
 	top: 4px;
 	 transition: width 0.5s;
 }
-.prd-desc-wrap .right-cont .desc p{
+. .right-cont .desc p{
 	margin: 0;
 }
 .left-cont .item img{ 
@@ -2565,7 +2565,20 @@ div.menu ul{
 .mobile-image{
 	height: 70px;
 }
+.mobile{
+	display: none !important;
+}
 @media screen and (max-width:1000px) {
+	.left-cont,.right-cont{
+		float: none !important;
+		width: 100%;
+	}
+	.web{
+		display: none !important;
+	}
+	.mobile{
+		display: initial !important;
+	}
 	.mobile-image{
 		margin-top: -6px;
 		height: 48px !important;

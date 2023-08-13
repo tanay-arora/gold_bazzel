@@ -55,7 +55,7 @@
 
     <div id="CSR" class="one-tab last" style="display: none;">
 		<div class="method column" style="margin: 0px;">
-			<div class="inner-wrap">
+			<div class="inner-wrap web">
 				<ul>
                     {% for value in csrs %}
 					<li>
@@ -71,6 +71,23 @@
 					
               <p>{{value.description}}</p>
 						</div>{% endif %}
+					</li>
+                    
+                    {% endfor %}
+				</ul>
+			</div>
+
+			<div class="inner-wrap mobile">
+				<ul>
+                    {% for value in csrs %}
+					<li>
+						<div class="img-sec">
+							<img  src="{{value.image.url}}" alt="" title="" />
+						</div>
+                            <div class="content-part">
+					
+              <p>{{value.description}}</p>
+						</div>
 					</li>
                     
                     {% endfor %}

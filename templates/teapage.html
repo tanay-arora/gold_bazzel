@@ -10,7 +10,37 @@
 		<li>{{product.title}}</li>
 	</ul>
 </div>
-<div class="inner-wrap">
+<div class="inner-wrap mobile">
+	<div class="prd-desc-wrap">
+		<div class="right-cont" style="width: 90%;">
+			
+			<div class="slider">
+				<br>
+				<img style="width: 90%;" src="{{product.image.url}}"/>
+			</div>
+		
+			<div>
+				<br>
+				<div class="heading">{{product.title}}</div>
+			<div class="prd-price-details">
+				<span>Net weight: {{product.weight}}</span>
+			</div>
+			<div class="desc-title">
+			</div>
+			<div class="desc">
+				<p>{{product.description}}</p>
+			</div>
+						<div class="button-holder">
+				<a href="{{product.shop_link}}" target="_blank" class="btn">BUY ONLINE</a>
+			</div>
+			</div>
+			</div>
+			</div>
+
+					
+</div>
+
+<div class="inner-wrap web">
 	<div class="prd-desc-wrap">
 		<div class="left-cont">
 			<div class="slider">
@@ -33,9 +63,10 @@
 					</div>
 	</div>
 </div>
+
 <div class="white-sec">
 	<div class="heading">MORE ABOUT THE PRODUCT</div>
-	<div class="about-product-holder">
+	<div class="about-product-holder web">
 		<ul>
 			<li>
 	  			<div class="icon"><img src="{% static 'img/ingredients.svg' %}"/></div>
@@ -51,6 +82,27 @@
 				<div class="icon"><img src="{% static 'img/sourced-with-care.svg'%}"/></div>
 			  	<div class="head">SOURCED WITH CARE</div>
 			  	<div class="abt-prd">At Gold Bazel we believe that everyone has the right to a decent quality of life and to be able to provide for themselves and their families. We aim & work at improving the quality of life in communities from where we source our products. Gold Bazel aims to buy from the best estates, both in terms of quality and social standards.</div>
+			</li>
+		</ul>
+	</div>
+	<div class="about-product-holder mobile">
+		<ul>
+			<li>
+				<div>
+					<div class="icon"><img src="{% static 'img/ingredients.svg' %}"/></div>
+					<div class="head">INGREDIENTS</div>
+					<div class="abt-prd">{{product.ingridents}}</div>
+			  </div>
+			  <div>
+					<div class="icon"><img src="{% static 'img/how-to-serve.svg'%}"/></div>
+					<div class="head">HOW TO SERVE</div>
+				   <div class="abt-prd">{{product.how_to_serve}}</div>
+			  </div>
+			  <div>
+				  <div class="icon"><img src="{% static 'img/sourced-with-care.svg'%}"/></div>
+					<div class="head">SOURCED WITH CARE</div>
+					<div class="abt-prd">At Gold Bazel we believe that everyone has the right to a decent quality of life and to be able to provide for themselves and their families. We aim & work at improving the quality of life in communities from where we source our products. Gold Bazel aims to buy from the best estates, both in terms of quality and social standards.</div>
+			  </div>
 			</li>
 		</ul>
 	</div>

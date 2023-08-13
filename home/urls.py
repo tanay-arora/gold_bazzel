@@ -9,7 +9,7 @@ urlpatterns = [
     path('our-tea', TeaView.as_view()),
     path('recipe', RecipeView.as_view()),
     path('indian-life', LifeView.as_view()),
-    path('our-dealers', DealerView.as_view()),
+    path('our-prizes', DealerView.as_view()),
     path('contact', ContactView.as_view()),
     path('product/<int:pk>', SingleProductView.as_view(), name='single_product'),
     path('story/<int:pk>', StoryView.as_view(), name='story'),
