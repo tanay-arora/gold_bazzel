@@ -37,17 +37,17 @@
 		  	<div class="row">
 		    	<div class="col-6">
 		    		<span class="noerror" ng-class="{errormsg: contactus.phoneno.$error.pattern}">Please input vaild phone number only!</span>
-		       		<input type="text" class="txtbox" ng-model="phoneno" maxlength="10" name="phoneno" placeholder="Phone Number" ng-pattern="/^[6-9][0-9]{9}$/">
+		       		<input type="text" class="txtbox" ng-model="phoneno" maxlength="10" name="phoneno" placeholder="Phone Number" required ng-pattern="/^[6-9][0-9]{9}$/">
 		     	</div>
 		     	<div class="col-6">
 		     		<span class="noerror" ng-class="{errormsg: contactus.city.$error.pattern}">Please input valid city name only!</span>
-		       		<input type="text" class="txtbox" ng-model="city" name="city" placeholder="City" ng-pattern="/^[a-zA-Z\-\s]+$/">
+		       		<input type="text" class="txtbox" ng-model="city" name="city" placeholder="City" required ng-pattern="/^[a-zA-Z\-\s]+$/">
 		     	</div>
 		  	</div>
 		  	<div class="row">
 			    <div class="col-12">
 			    	<span class="noerror" ng-class="{errormsg: contactus.message.$error.pattern}">Please input valid message only!</span>
-			       <textarea class="txtbox" placeholder="Enter Your Message" ng-model="message" name="message" cols="3" rows="3" ng-pattern="/^[a-zA-Z0-9\-\s\,\.]+$/" required></textarea>
+			       <textarea class="txtbox" placeholder="Enter Your Message" ng-model="message" name="message" cols="3" rows="3" required></textarea>
 			    </div>
 			</div>
 		  	<div class="row">
